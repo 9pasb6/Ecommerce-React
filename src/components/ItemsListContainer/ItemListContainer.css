@@ -1,0 +1,14 @@
+.banner{
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+}
+
+body {
+    background-color: rgba(219, 212, 212, 0.721);
+    background-size: cover; }
+/* 
+body {
+    background-image: url(../../assets/fondo.jpg);
+    background-size: cover; } */
+  

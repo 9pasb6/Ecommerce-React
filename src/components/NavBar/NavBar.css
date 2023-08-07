@@ -3,15 +3,20 @@
    
 }
 
-.nav-link{
+.nav-item{
     color: white;
+    text-decoration: none;
 }
 
-.nav-link:hover{
+.nav-item:hover{
     color: dimgrey;
 }
 
+.navbar-nav{
+display: flex;
+gap: 20px;
 
+}
 
 nav{
     background-color: #0b090c;
