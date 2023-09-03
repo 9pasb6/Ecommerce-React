@@ -1,0 +1,32 @@
+.containerCart{
+
+    
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 200px;
+
+    /* display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px; */
+}
+
+.containerCart2{
+
+   
+    text-align: center;
+    padding: 30px;
+    
+}
+
+
+.containerCart3{
+
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+   
+    
+}

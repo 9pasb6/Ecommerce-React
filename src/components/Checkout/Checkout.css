@@ -1,0 +1,42 @@
+.h1Check{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  
+  }
+  
+  h1 {
+    color: black; /* Texto negro */
+  }
+  
+  /* Estilo para el círculo de carga */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loading::before {
+    content: "";
+    border: 4px solid rgba(255, 255, 255, 0.3); /* Borde del círculo */
+    border-top: 4px solid #fff; /* Borde superior del círculo */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite; /* Animación de giro */
+  }
+  
+  .containerCheck3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Esto centra verticalmente en la ventana del navegador */
+    text-align: center; /* Centra el contenido horizontalmente */
+  }

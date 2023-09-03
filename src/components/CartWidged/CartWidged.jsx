@@ -1,26 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Cart from '../../assets/cart.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+
 
 const CartWidged = () => {
+
+  const {totalQuantity} = useContext(CartContext);
+
+
   return (
     <>
-    <div className='container text-center'>
-
-      <div className='row'> 
-
-      <div className='col'>
-      <img src={Cart} alt="robot" />
-      </div>
+    
    
-    <div className='col text-white'>
-    <p>0</p>
-      </div>
+      <Link to='/cart'  style={{ display: totalQuantity > 0 ?'block':'none', color: 'white', textDecoration: 'none'}}>
+      <img src={Cart} alt="cart-widget" />
+      <>{totalQuantity}</>
+      </Link>
+      
+   
+ 
+
+  
    
 
-      </div>
-    </div>
-   
 
     </>
   )

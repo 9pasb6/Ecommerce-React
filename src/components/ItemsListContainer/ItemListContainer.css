@@ -12,3 +12,8 @@ body {
     background-image: url(../../assets/fondo.jpg);
     background-size: cover; } */
   
+    @media (max-width: 768px) {
+        .carousel {
+          display: none;
+        }
+      }

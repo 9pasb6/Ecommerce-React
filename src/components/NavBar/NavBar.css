@@ -34,3 +34,9 @@ nav{
 .btn:hover{
     background-color: #ffa94d;
 }
+
+@media (max-width: 768px) {
+    .d-flex {
+      display: none;
+    }
+  }

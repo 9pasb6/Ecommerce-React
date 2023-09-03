@@ -8,7 +8,7 @@ import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
   return (
    <>
-  <nav className="navbar navbar-expand-lg ">
+ <nav className="navbar navbar-expand-lg">
   <div className="container-fluid">
   
      <Link className='navbar-brand' to={"/"}>
@@ -31,16 +31,20 @@ const NavBar = () => {
         </li>
        
       </ul>
-      <form className="d-flex" role="search">
+
+      {/* Estilo para ocultar el formulario en dispositivos móviles */}
+      <form className="d-none d-lg-flex d-xl-flex d-xxl-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Buscar</button>
       </form>
+
       <div className='p-3'>
         <CartWidged/>
       </div>
     </div>
   </div>
 </nav>
+
 
 
     

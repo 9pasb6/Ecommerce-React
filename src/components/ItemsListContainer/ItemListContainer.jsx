@@ -3,7 +3,10 @@ import { useParams } from 'react-router-dom'
 import { getProducts, getProductsByCategory } from '../../Data';
 import ItemList from '../ItemList/ItemList';
 import Carousel from '../Carousel/Carousel';
+import  {getDocs, collection, query, where} from 'firebase/firestore';
+import {db} from '../../services/firebase/firebaseConfig.js' ;
 import './ItemListContainer.css'
+
 
 
 
@@ -17,7 +20,33 @@ const ItemListContainer = () => {
     const {categoryId} = useParams();
 
 
-    useEffect(()=>{
+
+    
+
+    useEffect(() => {
+
+    const collectionRef = categoryId
+    ? query(collection(db, 'Products'), where('category', '==', categoryId))
+    : collection (db, 'Products')
+
+
+  getDocs(collectionRef)
+    .then(response => {
+      const productsAdapted = response.docs.map(doc =>{
+        const data = doc.data()
+        return {id: doc.id, ...data}
+      })
+      setProducts(productsAdapted)
+    })
+    .catch((error) => console.error(error));
+
+}, [categoryId]);
+
+
+
+// consumiendo desde la data interna
+
+ /*    useEffect(()=>{
 
       const asyncFunction = categoryId ? getProductsByCategory : getProducts
 
@@ -28,7 +57,7 @@ const ItemListContainer = () => {
           .catch(error => {
             console.log(error)
           })
-    }, [categoryId])
+    }, [categoryId]) */
 
   
 
